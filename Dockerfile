@@ -11,4 +11,4 @@ RUN python3 -m pip install flask --break-system-packages
 
 EXPOSE 5000
 
-CMD ["sh"]
+CMD ["python3", "./app.py"]
