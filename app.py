@@ -5,7 +5,6 @@
 # Date created       : 3 Jun 2023
 
 
-import os
 import random
 from flask import Flask, render_template, request, redirect
 
@@ -13,14 +12,20 @@ from flask import Flask, render_template, request, redirect
 saved_links = {}
 
 
-def generate_link_id(lenght=10):
+def generate_link_id(length=8):
+    """
+    Generates a random link ID of specified length.
+
+    :param length: The length of the generated link ID (default is 10).
+    :return: A randomly generated link ID string.
     """
 
-    :param lenght:
-    :return:
-    """
     alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
-    link_id = "".join([random.choice(alphabet) for k in range(lenght)])
+
+    link_id = "".join([random.choice(alphabet) for k in range(length)])
+    while link_id not in saved_links.keys():
+        link_id = "".join([random.choice(alphabet) for k in range(length)])
+
     return link_id
 
 
