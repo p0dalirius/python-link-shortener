@@ -11,7 +11,17 @@ Simple python link shortener in Flask.
 
 ## Usage
 
+In order to start the container of the server, just type in this repository:
 
+```
+make start
+```
+
+This will start a Docker container listenning ontcp port 5000 with the link shortener server.
+
+## Demonstration
+
+![](./.github/example.png)
 
 ## Contributing
 
